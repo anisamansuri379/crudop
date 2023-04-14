@@ -1,0 +1,333 @@
+Started GET "/" for ::1 at 2023-04-13 19:13:07 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/anisamansuri/.rvm/rubies/ruby-3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/anisamansuri/.rvm/rubies/ruby-3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | Allocations: 839)
+Completed 200 OK in 9ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 7171)
+
+
+Started GET "/" for ::1 at 2023-04-13 19:14:21 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/anisamansuri/.rvm/rubies/ruby-3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/anisamansuri/.rvm/rubies/ruby-3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.8ms | Allocations: 454)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 1266)
+
+
+Started GET "/blah" for 127.0.0.1 at 2023-04-13 19:17:29 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/blah"):
+  
+Started GET "/books" for 127.0.0.1 at 2023-04-13 19:17:52 +0530
+  
+ActionController::RoutingError (uninitialized constant BooksController):
+  
+Started GET "/books" for 127.0.0.1 at 2023-04-13 19:25:34 +0530
+Processing by BooksController#index as */*
+Completed 204 No Content in 0ms (Allocations: 102)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-13 19:25:38 +0530
+Processing by BooksController#index as */*
+Completed 204 No Content in 0ms (Allocations: 32)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-13 19:31:08 +0530
+Processing by BooksController#index as */*
+Completed 500 Internal Server Error in 2ms (Allocations: 1751)
+
+
+  
+NameError (uninitialized constant BooksController::Book):
+  
+app/controllers/books_controller.rb:3:in `index'
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20230413140509)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230413140509"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-13 14:11:30.542961"], ["updated_at", "2023-04-13 14:11:30.542961"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for 127.0.0.1 at 2023-04-13 19:43:52 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1464)
+
+
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I dont know"], ["author", "Anisa"], ["created_at", "2023-04-13 14:18:52.745672"], ["updated_at", "2023-04-13 14:18:52.745672"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBook Create (0.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Lets see"], ["author", "Janhavi"], ["created_at", "2023-04-13 14:19:39.797424"], ["updated_at", "2023-04-13 14:19:39.797424"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/books" for 127.0.0.1 at 2023-04-13 19:50:36 +0530
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 1.2ms | Allocations: 17789)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-13 22:17:55 +0530
+Processing by BooksController#create as */*
+Completed 204 No Content in 0ms (Allocations: 72)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-13 22:18:03 +0530
+Processing by BooksController#create as */*
+Completed 204 No Content in 0ms (Allocations: 30)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-13 22:54:22 +0530
+Processing by BooksController#create as */*
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:9:in `create'
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Secret"], ["author", "Danish"], ["created_at", "2023-04-13 17:24:22.969064"], ["updated_at", "2023-04-13 17:24:22.969064"]]
+  ↳ app/controllers/books_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:9:in `create'
+Completed 201 Created in 12ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 4090)
+
+
+Started GET "/books%20" for ::1 at 2023-04-13 23:06:53 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/books%20"):
+  
+Started POST "/books" for 127.0.0.1 at 2023-04-13 23:13:08 +0530
+Processing by BooksController#create as */*
+  Parameters: {"author"=>"James", "title"=>"a book", "book"=>{"title"=>"a book", "author"=>"James"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:9:in `create'
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "a book"], ["author", "James"], ["created_at", "2023-04-13 17:43:08.563659"], ["updated_at", "2023-04-13 17:43:08.563659"]]
+  ↳ app/controllers/books_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:9:in `create'
+Completed 201 Created in 7ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 2986)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-13 23:13:44 +0530
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 1193)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-14 11:20:38 +0530
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.6ms | Allocations: 3321)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-14 11:22:40 +0530
+Processing by BooksController#create as */*
+  Parameters: {"author"=>"xy", "title"=>"yz", "book"=>{"title"=>"yz", "author"=>"xy"}}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 464)
+
+
+  
+ArgumentError (Unrecognized status code :unprocessable_entry):
+  
+app/controllers/books_controller.rb:12:in `create'
+Started POST "/books" for 127.0.0.1 at 2023-04-14 11:24:39 +0530
+Processing by BooksController#create as */*
+  Parameters: {"author"=>"xy", "title"=>"yz", "book"=>{"title"=>"yz", "author"=>"xy"}}
+Completed 422 Unprocessable Entity in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms | Allocations: 5076)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-14 11:26:25 +0530
+Processing by BooksController#create as */*
+  Parameters: {"author"=>"xy", "title"=>"yzjhnj", "book"=>{"title"=>"yzjhnj", "author"=>"xy"}}
+Completed 422 Unprocessable Entity in 8ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 546)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-14 11:26:54 +0530
+Processing by BooksController#create as */*
+  Parameters: {"author"=>"xdsswy", "title"=>"yzjhnj", "book"=>{"title"=>"yzjhnj", "author"=>"xdsswy"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:9:in `create'
+  [1m[36mBook Create (1.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "yzjhnj"], ["author", "xdsswy"], ["created_at", "2023-04-14 05:56:54.676535"], ["updated_at", "2023-04-14 05:56:54.676535"]]
+  ↳ app/controllers/books_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:9:in `create'
+Completed 201 Created in 10ms (Views: 0.5ms | ActiveRecord: 2.2ms | Allocations: 1758)
+
+
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+Started DELETE "/boooks/1" for 127.0.0.1 at 2023-04-14 11:51:53 +0530
+  
+ActionController::RoutingError (No route matches [DELETE] "/boooks/1"):
+  
+Started DELETE "/boooks/1" for 127.0.0.1 at 2023-04-14 11:59:03 +0530
+  
+ActionController::RoutingError (No route matches [DELETE] "/boooks/1"):
+  
+Started DELETE "/books/1" for 127.0.0.1 at 2023-04-14 12:03:26 +0530
+Processing by BooksController#destroy as */*
+  Parameters: {"id"=>"1", "book"=>{}}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:17:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:17:in `destroy'
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/books_controller.rb:17:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:17:in `destroy'
+Completed 204 No Content in 12ms (ActiveRecord: 1.6ms | Allocations: 3908)
+
+
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/concerns/api/v1/books" for 127.0.0.1 at 2023-04-14 14:14:27 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/concerns/api/v1/books"):
+  
+Started GET "/api/v1/books" for 127.0.0.1 at 2023-04-14 14:14:44 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/books"):
+  
+Started GET "/api/v1/books" for 127.0.0.1 at 2023-04-14 14:14:52 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/books"):
+  
+Started GET "/books" for 127.0.0.1 at 2023-04-14 14:16:36 +0530
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 3326)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-14 15:47:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 0.5ms | Allocations: 36779)
+
+
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/books" for 127.0.0.1 at 2023-04-14 16:10:03 +0530
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 3287)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-14 16:18:08 +0530
+Processing by BooksController#create as */*
+  Parameters: {"author"=>"abc", "title"=>"xyz", "book"=>{"title"=>"xyz", "author"=>"abc"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:13:in `create'
+  [1m[36mBook Create (1.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "xyz"], ["author", "abc"], ["created_at", "2023-04-14 10:48:08.704777"], ["updated_at", "2023-04-14 10:48:08.704777"]]
+  ↳ app/controllers/books_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:13:in `create'
+Completed 201 Created in 7ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 2386)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-14 16:18:47 +0530
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1208)
+
+
+Started DELETE "/books/2" for 127.0.0.1 at 2023-04-14 16:19:37 +0530
+Processing by BooksController#destroy as */*
+  Parameters: {"id"=>"2", "book"=>{}}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mBook Destroy (0.5ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:29:in `destroy'
+Completed 204 No Content in 13ms (ActiveRecord: 1.5ms | Allocations: 3677)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-14 16:19:48 +0530
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1058)
+
+
+Started PUT "/books/3" for 127.0.0.1 at 2023-04-14 16:22:48 +0530
+  
+ActionController::RoutingError (No route matches [PUT] "/books/3"):
+  
+Error occurred while parsing request parameters.
+Contents:
+
+{"author": "xxxxxxxxx","title:"zzzzzzz"}
+Started PUT "/books/3" for 127.0.0.1 at 2023-04-14 16:25:36 +0530
+  
+ActionController::RoutingError (No route matches [PUT] "/books/3"):
+  
+Started GET "/books" for 127.0.0.1 at 2023-04-14 16:25:56 +0530
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.5ms | Allocations: 1199)
+
+
+Started PUT "/books/3" for 127.0.0.1 at 2023-04-14 16:29:47 +0530
+Error occurred while parsing request parameters.
+Contents:
+
+{"author": "xxxxxxxxx","title:"zzzzzzz"}
+Processing by BooksController#update as */*
+Completed 400 Bad Request in 0ms (Allocations: 169)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/books_controller.rb:22:in `update'
+Started GET "/books" for 127.0.0.1 at 2023-04-14 16:33:04 +0530
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 1.8ms | Allocations: 3001)
+
+
+Started PUT "/books/3" for 127.0.0.1 at 2023-04-14 16:33:23 +0530
+Error occurred while parsing request parameters.
+Contents:
+
+{"author": "xxxxxxxxx","title:"zzzzzzz"}
+Processing by BooksController#update as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 114)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/books_controller.rb:22:in `update'
+Started PUT "/books/3" for 127.0.0.1 at 2023-04-14 16:40:24 +0530
+Processing by BooksController#update as */*
+  Parameters: {"author"=>"xxxxxxxxswy", "title"=>"zzzzzzzzzzj", "id"=>"3", "book"=>{"title"=>"zzzzzzzzzzj", "author"=>"xxxxxxxxswy"}}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:22:in `update'
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "title" = ?, "author" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["title", "zzzzzzzzzzj"], ["author", "xxxxxxxxswy"], ["updated_at", "2023-04-14 11:10:24.753816"], ["id", 3]]
+  ↳ app/controllers/books_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:22:in `update'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 2639)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-14 16:40:37 +0530
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 1083)
+
+
